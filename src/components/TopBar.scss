@@ -1,0 +1,193 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #f7fbfc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+
+  .welcome-message {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: 1.5rem;
+      color: #333;
+      font-weight: bold;
+      animation: slideIn 0.8s ease;
+
+      /* Emoji animation */
+      &::after {
+        content: " 👋";
+        animation: wave 1.5s infinite;
+      }
+    }
+
+    .date-time {
+      font-size: 0.9rem;
+      color: #888;
+    }
+  }
+
+  .search-notification {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .search-bar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+      width: 250px;
+
+      &:focus-within {
+        // box-shadow: 0 0 5px rgba(0, 175, 255, 0.5);
+      }
+
+      .search-icon {
+        color: #92e6f0;
+        margin-right: 0.5rem;
+      }
+
+      .clear-icon {
+        color: #888;
+        margin-left: auto;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #ff4b5c;
+        }
+      }
+
+      input {
+        border: none;
+        outline: none;
+        font-size: 0.9rem;
+        color: #333;
+        width: 100%;
+        background: transparent;
+
+        &::placeholder {
+          color: #aaa;
+          animation: placeholderChange 5s infinite;
+        }
+      }
+
+      .search-button {
+        background-color: #4a90e2;
+        border: none;
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-left: 0.5rem;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: #3a80c2;
+        }
+
+        svg {
+          font-size: 0.9rem;
+        }
+      }
+
+      .suggestions {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 0.3rem;
+        z-index: 10;
+
+        .suggestion-item {
+          padding: 0.5rem;
+          font-size: 0.9rem;
+          color: #333;
+          cursor: pointer;
+          transition: background 0.3s;
+
+          &:hover {
+            background-color: #f5f5f5;
+          }
+        }
+      }
+    }
+
+    .notification-icon {
+      position: relative;
+      font-size: 1.2rem;
+      color: #92e6f0;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #4a90e2;
+      }
+
+      .notification-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: #ff4b5c;
+        color: #fff;
+        border-radius: 50%;
+        padding: 0.2rem 0.5rem;
+        font-size: 0.75rem;
+        font-weight: bold;
+      }
+    }
+
+    /* Profile icon styling */
+    .profile-icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  @keyframes placeholderChange {
+    0% { content: "Search medications..."; }
+    33% { content: "Try 'Pain Relief'..."; }
+    66% { content: "Or 'Antibiotics'..."; }
+    100% { content: "Search medications..."; }
+  }
+
+  @keyframes wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+}

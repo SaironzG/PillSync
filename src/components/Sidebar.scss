@@ -1,0 +1,74 @@
+.sidebar {
+  width: 250px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 
+              0 6px 20px rgba(0, 0, 0, 0.19);
+              border-radius: 20px;
+  margin: 1rem;
+
+  .logo {
+    display: flex; /* Centering the logo */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    margin: 20px 0; /* Spacing above and below the logo */
+    
+    img {
+      max-width: 100%; /* Responsive image */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px; /* Optional: rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+      transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+
+      &:hover {
+        transform: scale(1.05); /* Slightly enlarge on hover */
+      }
+    }
+  }
+
+  ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+    width: 100%; /* Full width for list items */
+
+    li {
+      padding: 1rem; /* Spacing for list items */
+/* Pointer cursor on hover */
+      transition: color 0.3s; /* Smooth color transition */
+
+      // &:hover,
+      // &.active {
+      //   color: #92E6F0; /* Change color on hover and for active state */
+      //   font-weight: bold; /* Bold text for emphasis */
+      // }
+      a{
+     /* Spacing for list items */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: color 0.3s; /* Smooth color transition */
+  text-decoration: none;
+  color: #000;
+        &:hover,
+        &.active {
+          color: #92E6F0; /* Change color on hover and for active state */
+          font-weight: bold; /* Bold text for emphasis */
+        }
+      }
+    }
+  }
+
+  .download-app {
+    margin-top: auto; /* Push to the bottom of the sidebar */
+    background-color: #4a90e2; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 0.8rem 1.2rem; /* Padding for button */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+
+    &:hover {
+      background-color: #3a80c2; /* Darker shade on hover */
+    }
+  }
+}
