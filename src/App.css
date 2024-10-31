@@ -26,5 +26,27 @@ body {
     }
   }
   
+/* App.css */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.dashboard-content {
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+      padding: 10px;
+  }
+}
 
 

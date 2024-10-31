@@ -9,9 +9,9 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <div className='logo'>
+      <NavLink exact to="/" className='logo'>
         <img src={logo} alt="Logo" />
-      </div>
+      </NavLink>
       <ul>
         <li>
           <NavLink exact to="/" activeClassName="active">

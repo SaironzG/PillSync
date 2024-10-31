@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #f7fbfc;
+  background: linear-gradient(135deg, #ffffff, #e0f7fa);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin-bottom: 1rem;
@@ -47,9 +47,9 @@
       transition: all 0.3s ease;
       width: 250px;
 
-      &:focus-within {
-        // box-shadow: 0 0 5px rgba(0, 175, 255, 0.5);
-      }
+      // &:focus-within {
+      //   // box-shadow: 0 0 5px rgba(0, 175, 255, 0.5);
+      // }
 
       .search-icon {
         color: #92e6f0;
@@ -155,10 +155,12 @@
     .profile-icon {
       width: 35px;
       height: 35px;
-      border-radius: 50%;
-      overflow: hidden;
+    border-radius: 20px;
+      // overflow: hidden;
       cursor: pointer;
       transition: box-shadow 0.3s ease;
+      justify-content: center;
+      align-items: center;
 
       &:hover {
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);

@@ -6,13 +6,13 @@ $highlight: #a67d2f;
 
 .medication-reminders {
 
-  padding: 0.1rem;
+  padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 400px;
 
   text-align: center;
-
+  background: linear-gradient(135deg, #ffffff, #e0f7fa);
   h2 {
     font-size: 1.75rem;
     color: $primary-color;
