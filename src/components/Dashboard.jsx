@@ -1,42 +1,43 @@
 import React from 'react';
-import styled from 'styled-components';
-
-import RefillAlerts from '../Pages/RefillAlerts';
-import AdherenceInsights from '../Pages/AdherenceInsights';
-import UpcomingDoses from '../Pages/UpcomingDoses';
-
-const DashboardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  gap: 20px;
-  background-color: #f5f9ff;
-  height: 100vh;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 24px;
-  font-weight: bold;
-  color: #4a90e2;
-  margin-bottom: 10px;
-`;
-
-const CardsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-`;
+import { FaPills, FaClock, FaInfoCircle, FaHospital } from 'react-icons/fa';
+import './Dashboard.scss';
 
 const Dashboard = () => {
+  const notifications = [
+    { medication: 'Aspirin', daysLeft: 5, dueDate: '2024-11-05', pharmacy: 'Pharmacy A' },
+    { medication: 'Metformin', daysLeft: 2, dueDate: '2024-11-02', pharmacy: 'Pharmacy B' },
+    { medication: 'Ibuprofen', daysLeft: 10, dueDate: '2024-11-10', pharmacy: 'Pharmacy C' },
+  ];
+
   return (
-    <DashboardContainer>
-      <SectionTitle>PillSync Dashboard</SectionTitle>
-      <CardsContainer>
-        <UpcomingDoses/>
-        <RefillAlerts />
-        <AdherenceInsights />
-      </CardsContainer>
-    </DashboardContainer>
+    <div className="dashboard">
+      <h1>PillSync Dashboard</h1>
+      <div className="card-container">
+        {notifications.map((note, index) => (
+          <div key={index} className="card">
+            <div className="card-header">
+              <FaPills className="pill-icon" />
+              <h3>{note.medication}</h3>
+            </div>
+            <div className="card-body">
+              <div className="days-left">
+                <FaClock className="icon" />
+                <p>{note.daysLeft} days left</p>
+              </div>
+              <div className="refill-info">
+                <FaInfoCircle className="icon" />
+                <p>Due: {note.dueDate}</p>
+              </div>
+              <div className="pharmacy-info">
+                <FaHospital className="icon" />
+                <p>{note.pharmacy}</p>
+              </div>
+            </div>
+            <button className="refill-button">Refill</button>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
